@@ -1,6 +1,14 @@
-# spdx-license-list [![Build Status](https://travis-ci.org/sindresorhus/spdx-license-list.svg?branch=master)](https://travis-ci.org/sindresorhus/spdx-license-list)
+# licenses [![Build Status](https://travis-ci.org/Ovyerus/licenses.svg?branch=master)](https://travis-ci.org/Ovyerus/licenses)
 
-> List of [SPDX licenses](https://spdx.org/licenses/)
+> List of [SPDX licenses](https://spdx.org/licenses/) with predictable placeholder strings for copyright info.
+
+This is a fork of [spdx-license-list](https://github.com/sindresorhus/spdx-license-list) with added placeholders
+in the copyright strings (of most of the licenses) to make it easy for machines to create licenses with user-given info.
+
+Some licenses are skipped due to being overly specific for that particular product or company, however most generic,
+OSI-approved licenses should have them just fine.
+
+<small>(If you want to add support for a license that hasn't received placeholders yet, feel free to submit a PR 😃)</small>
 
 The lists of licenses are just JSON files and can be used anywhere.
 
@@ -8,20 +16,21 @@ The lists of licenses are just JSON files and can be used anywhere.
 - [spdx-full.json](spdx-full.json) includes the license text too
 - [spdx-simple.json](spdx-simple.json) only contains the license IDs
 
-*Using SPDX License List version 3.6 (2019-07-10)*
+_Using SPDX License List version 3.6 (2019-07-10)_
 
+The placeholders in the text are in the format of `<placeholder name>`, so for example, `Copyright (c) 2002 John Doe`
+would become `Copyright (c) <year> <author>`
 
 ## Install
 
 ```
-$ npm install spdx-license-list
+$ npm install @ovyerus/licenses
 ```
-
 
 ## Usage
 
 ```js
-const spdxLicenseList = require('spdx-license-list');
+const spdxLicenseList = require('@ovyerus/licenses');
 
 console.log(spdxLicenseList.MIT);
 /*
@@ -34,7 +43,7 @@ console.log(spdxLicenseList.MIT);
 ```
 
 ```js
-const mitLicense = require('spdx-license-list/licenses/MIT');
+const mitLicense = require('@ovyerus/licenses/licenses/MIT');
 
 console.log(mitLicense.licenseText);
 //=> 'MIT License\r\n\r\nCopyright (c) <year> <copyright holders> …'
@@ -43,7 +52,7 @@ console.log(mitLicense.licenseText);
 You can also get a version with the licence text included:
 
 ```js
-const spdxLicenseList = require('spdx-license-list/full');
+const spdxLicenseList = require('@ovyerus/licenses/full');
 
 console.log(spdxLicenseList.MIT);
 /*
@@ -59,12 +68,11 @@ console.log(spdxLicenseList.MIT);
 Or just the license IDs as a `Set`:
 
 ```js
-const spdxLicenseList = require('spdx-license-list/simple');
+const spdxLicenseList = require('@ovyerus/licenses/simple');
 
 console.log(spdxLicenseList);
 //=> Set {'Glide', 'Abstyles', …}
 ```
-
 
 ## API
 

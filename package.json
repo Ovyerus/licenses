@@ -1,13 +1,13 @@
 {
-	"name": "spdx-license-list",
+	"name": "@ovyerus/licenses",
 	"version": "6.1.0",
-	"description": "List of SPDX licenses",
+	"description": "List of SPDX licenses with predictable placeholders",
 	"license": "CC0-1.0",
-	"repository": "sindresorhus/spdx-license-list",
+	"repository": "ovyerus/licenses",
 	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"name": "Ovyerus",
+		"email": "iamovyerus@gmail.com",
+		"url": "https://ovyerus.com"
 	},
 	"engines": {
 		"node": ">=8"
