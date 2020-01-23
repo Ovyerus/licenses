@@ -11,8 +11,7 @@
 module.exports = {
 	'0BSD': {
 		year: /(2006)/,
-		author: /(Rob Landley)/,
-		email: /(<rob@landley.net>)/
+		author: /(Rob Landley <rob@landley.net>)/
 	},
 	AAL: {
 		year: /(2002)/,
@@ -302,8 +301,7 @@ module.exports = {
 	},
 	curl: {
 		year: /(1996-2015)/,
-		author: /(Daniel Stenberg)/,
-		email: /(<daniel@haxx.se>)/
+		author: /(Daniel Stenberg, <daniel@haxx.se>)/
 	},
 	'D-FSL-1.0': {}, // says to include copyright line, do we add?
 	diffmark: {},
@@ -405,18 +403,15 @@ module.exports = {
 	},
 	'GFDL-1.3-only': {
 		year: /(2000, 2001, 2002, 2007, 2008)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<http:\/\/fsf.org\/>)/
+		author: /(Free Software Foundation, Inc\. <http:\/\/fsf.org\/>)/
 	},
 	'GFDL-1.3-or-later': {
 		year: /(2000, 2001, 2002, 2007, 2008)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<http:\/\/fsf.org\/>)/
+		author: /(Free Software Foundation, Inc\. <http:\/\/fsf.org\/>)/
 	},
 	'GFDL-1.3': {
 		year: /(2000, 2001, 2002, 2007, 2008)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<http:\/\/fsf.org\/>)/
+		author: /(Free Software Foundation, Inc\. <http:\/\/fsf.org\/>)/
 	},
 	Giftware: {
 		year: /(18 October 1998)/, // Not too sure if this is meant to be copyright notice or license attribution
@@ -483,25 +478,21 @@ module.exports = {
 	},
 	'GPL-3.0-only': {
 		year: /© (2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf.org\/>)/
 	},
 	'GPL-3.0-or-later': {
 		year: /© (2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf.org\/>)/
 	},
 	'GPL-3.0-with-autoconf-exception': {},
 	'GPL-3.0-with-GCC-exception': {},
 	'GPL-3.0': {
 		year: /© (2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf.org\/>)/
 	},
 	'GPL-3.0+': {
 		year: /© (2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf.org\/>)/
 	},
 	'gSOAP-1.3b': {},
 	HaskellReport: {
@@ -590,23 +581,19 @@ module.exports = {
 	},
 	'LGPL-3.0-only': {
 		year: /(\(C\) 2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf\.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf\.org\/>)/
 	},
 	'LGPL-3.0-or-later': {
 		year: /(\(C\) 2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf\.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf\.org\/>)/
 	},
 	'LGPL-3.0': {
 		year: /(\(C\) 2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf\.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf\.org\/>)/
 	},
 	'LGPL-3.0+': {
 		year: /(\(C\) 2007)/,
-		author: /(Free Software Foundation, Inc\.)/,
-		email: /(<https:\/\/fsf\.org\/>)/
+		author: /(Free Software Foundation, Inc\. <https:\/\/fsf\.org\/>)/
 	},
 	LGPLLR: {},
 	'libpng-2.0': {},
@@ -634,8 +621,7 @@ module.exports = {
 	MakeIndex: {},
 	MirOS: {
 		year: /(\[YEAR\])/,
-		author: /(\[NAME\])/,
-		email: /(\[EMAIL\])/
+		author: /(\[NAME\] \[EMAIL\])/
 	},
 	'MIT-0': {
 		year: /(<YEARr>)/,
@@ -731,8 +717,7 @@ module.exports = {
 	'OFL-1.0': {},
 	'OFL-1.1': {
 		year: /(<dates>)/,
-		author: /(<Copyright Holder>)/,
-		email: /(\(<URL\|email>\))/
+		author: /(<Copyright Holder> \(<URL\|email>\))/
 	},
 	'OGL-Canada-2.0': {},
 	'OGL-UK-1.0': {},
