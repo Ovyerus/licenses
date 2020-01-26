@@ -4,6 +4,8 @@
   "description": "List of SPDX licenses with predictable placeholders",
   "license": "CC0-1.0",
   "repository": "ovyerus/licenses",
+  "main": "index.js",
+  "types": "index.d.ts",
   "author": {
     "name": "Ovyerus",
     "email": "iamovyerus@gmail.com",
@@ -23,7 +25,10 @@
     "spdx.json",
     "spdx-full.json",
     "spdx-simple.json",
-    "licenses"
+    "licenses",
+    "index.d.ts",
+    "full.d.ts",
+    "simple.d.ts"
   ],
   "keywords": [
     "spdx",
