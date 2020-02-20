@@ -3,6 +3,7 @@ require('hard-rejection/register'); // eslint-disable-line import/no-unassigned-
 const Ora = require('ora');
 const got = require('got');
 const pMap = require('p-map');
+const { yellow } = require('colorette');
 
 const fs = require('fs');
 const path = require('path');
@@ -71,7 +72,9 @@ spinner.start();
         }
       else
         console.warn(
-          `No placeholder replacer found for \`${license.licenseId}\`. Probably new license.`
+          yellow(
+            `\nNo placeholder replacer found for \`${license.licenseId}\`. Probably new license.`
+          )
         );
 
       fs.writeFileSync(
