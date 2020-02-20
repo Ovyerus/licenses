@@ -583,6 +583,10 @@ module.exports = {
   LGPLLR: {},
   'libpng-2.0': {},
   Libpng: {},
+  'libselinux-1.0': {
+    author: /(NSA)/g,
+    project: /(\(libselinux\))/g
+  },
   libtiff: {},
   'LiLiQ-P-1.1': {},
   'LiLiQ-R-1.1': {},
@@ -696,6 +700,10 @@ module.exports = {
   'NPL-1.1': {},
   'NPOSL-3.0': {},
   NRL: {},
+  'NTP-0': {
+    year: /(\(4-digit-year\))/g,
+    author: [/(\(CopyrightHoldersName\))/g, /(\(TrademarkedName\))/g]
+  },
   NTP: {
     year: /(\(From 4-digit-year\)-\(To 4-digit-year\))/g,
     author: [/(\(CopyrightHoldersName\))/g, /(\(TrademarkedName\))/g]
