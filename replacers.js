@@ -722,7 +722,8 @@ module.exports = {
   },
   'OFL-1.1-RFN': {
     year: /(<dates>)/g,
-    author: /(<Copyright Holder> \(<URL\|email>\))/g
+    author: /(<Copyright Holder> \(<URL\|email>\))/g,
+    project: /(<Reserved Font Name>)/g
   },
   'OFL-1.1': {
     year: /(<dates>)/g,
