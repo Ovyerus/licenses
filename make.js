@@ -55,6 +55,7 @@ spinner.start();
           let replacement, regex;
 
           if (!Array.isArray(regex_)) regex = [regex_];
+          else regex = regex_;
 
           if (name.startsWith('remove')) replacement = '';
           else if (name === 'replaceCopyrightInfo')
