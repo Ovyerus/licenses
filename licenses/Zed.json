@@ -2,5 +2,5 @@
 	"name": "Zed License",
 	"url": "https://fedoraproject.org/wiki/Licensing/Zed",
 	"osiApproved": false,
-	"licenseText": "(c) Jim Davies, <year>\n\nYou may copy and distribute this file freely. Any queries and complaints should be forwarded to <email>.\n\nIf you make any changes to this file, please do not distribute the results under the name `<author>'."
+	"licenseText": "(c) <author>, <year>\n\nYou may copy and distribute this file freely. Any queries and complaints should be forwarded to <email>.\n\nIf you make any changes to this file, please do not distribute the results under the name `<project>'."
 }

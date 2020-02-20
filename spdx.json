@@ -1117,7 +1117,7 @@
 	"MIT-0": {
 		"name": "MIT No Attribution",
 		"url": "https://github.com/aws/mit-0",
-		"osiApproved": true
+		"osiApproved": false
 	},
 	"MIT-CMU": {
 		"name": "CMU License",
@@ -1269,6 +1269,11 @@
 		"url": "https://opensource.org/licenses/NTP",
 		"osiApproved": true
 	},
+	"NTP-0": {
+		"name": "NTP No Attribution",
+		"url": "https://github.com/tytso/e2fsprogs/blob/master/lib/et/et_name.c",
+		"osiApproved": false
+	},
 	"Naumen": {
 		"name": "Naumen Public License",
 		"url": "https://opensource.org/licenses/Naumen",
@@ -1329,8 +1334,28 @@
 		"url": "http://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web",
 		"osiApproved": false
 	},
+	"OFL-1.0-RFN": {
+		"name": "SIL Open Font License 1.0 with Reserved Font Name",
+		"url": "http://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web",
+		"osiApproved": false
+	},
+	"OFL-1.0-no-RFN": {
+		"name": "SIL Open Font License 1.0 with no Reserved Font Name",
+		"url": "http://scripts.sil.org/cms/scripts/page.php?item_id=OFL10_web",
+		"osiApproved": false
+	},
 	"OFL-1.1": {
 		"name": "SIL Open Font License 1.1",
+		"url": "http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web",
+		"osiApproved": true
+	},
+	"OFL-1.1-RFN": {
+		"name": "SIL Open Font License 1.1 with Reserved Font Name",
+		"url": "http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web",
+		"osiApproved": true
+	},
+	"OFL-1.1-no-RFN": {
+		"name": "SIL Open Font License 1.1 with no Reserved Font Name",
 		"url": "http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web",
 		"osiApproved": true
 	},
@@ -1497,6 +1522,11 @@
 	"PHP-3.01": {
 		"name": "PHP License v3.01",
 		"url": "http://www.php.net/license/3_01.txt",
+		"osiApproved": false
+	},
+	"PSF-2.0": {
+		"name": "Python Software Foundation License 2.0",
+		"url": "https://opensource.org/licenses/Python-2.0",
 		"osiApproved": false
 	},
 	"Parity-6.0.0": {
@@ -1967,6 +1997,11 @@
 	"libpng-2.0": {
 		"name": "PNG Reference Library version 2",
 		"url": "http://www.libpng.org/pub/png/src/libpng-LICENSE.txt",
+		"osiApproved": false
+	},
+	"libselinux-1.0": {
+		"name": "libselinux public domain notice",
+		"url": "https://github.com/SELinuxProject/selinux/blob/master/libselinux/LICENSE",
 		"osiApproved": false
 	},
 	"libtiff": {

@@ -705,7 +705,17 @@ module.exports = {
   'OCLC-2.0': {}, // Todo
   'ODbL-1.0': {},
   'ODC-By-1.0': {},
+  'OFL-1.0-no-RFN': {},
+  'OFL-1.0-RFN': {},
   'OFL-1.0': {},
+  'OFL-1.1-no-RFN': {
+    year: /(<dates>)/g,
+    author: /(<Copyright Holder> \(<URL\|email>\))/g
+  },
+  'OFL-1.1-RFN': {
+    year: /(<dates>)/g,
+    author: /(<Copyright Holder> \(<URL\|email>\))/g
+  },
   'OFL-1.1': {
     year: /(<dates>)/g,
     author: /(<Copyright Holder> \(<URL\|email>\))/g
@@ -755,6 +765,7 @@ module.exports = {
     project: /(classworlds)/g
   },
   PostgreSQL: {}, // Todo
+  'PSF-2.0': {},
   psfrag: {
     year: /(1996)/g,
     author: /(Craig Barratt, Michael C. Grant, and David Carlisle)/g,
@@ -905,7 +916,7 @@ module.exports = {
     year: /\(C\) (2004)/g,
     author: /(Sam Hocevar <sam@hocevar\.net>)/g
   },
-  WXwindows: {},
+  wxWindows: {},
   X11: {},
   Xerox: {
     year: /(1995, 1996)/g,
