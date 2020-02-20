@@ -82,9 +82,11 @@ spinner.start();
         Object.keys(licensesJson).length
       } licenses`;
     } catch (error) {
-      throw new Error(
-        `Error getting URL ${license.detailsUrl}. Response is:\n${error.response.body}`
-      );
+      if (error.response)
+        throw new Error(
+          `Error getting URL ${license.detailsUrl}. Response is:\n${error.response.body}`
+        );
+      else throw error;
     }
   };
 
