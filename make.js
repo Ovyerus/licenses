@@ -10,6 +10,22 @@ const path = require('path');
 
 const replacers = require('./replacers');
 
+const typesTemplate = `declare namespace licenses {
+  export type Identifiers = {{}};
+
+  export interface LicenseInfo {
+    name: string;
+    url: string;
+    osiApproved: boolean;
+  }
+}
+
+declare const licenses: {
+  [key in licenses.Identifiers[number]]: licenses.LicenseInfo;
+};
+export = licenses;
+`;
+
 const URL = 'https://spdx.org/licenses/licenses.json';
 const MAX_CONCURRENT_CONNECTIONS = 10;
 const spinner = new Ora();
@@ -99,6 +115,16 @@ spinner.start();
   });
 
   fs.writeFileSync('spdx-full.json', JSON.stringify(licensesJson, null, '\t'));
+  fs.writeFileSync(
+    'index.d.ts',
+    typesTemplate.replace(
+      '{{}}',
+      JSON.stringify(Object.keys(licensesJson), null, '    ')
+    )
+  );
+
+  spinner.text = 'Writing type definitions';
+
   spinner.succeed('Done');
 })().catch(error => {
   if ('response' in error)
