@@ -26,6 +26,18 @@ declare const licenses: {
 export = licenses;
 `;
 
+const licenseTypeTemplate = `interface License {
+  name: string;
+  url: string;
+  osiApproved: boolean;
+  licenseText: string;
+}
+
+declare const license: License;
+
+export default license;
+`;
+
 const URL = 'https://spdx.org/licenses/licenses.json';
 const MAX_CONCURRENT_CONNECTIONS = 10;
 const spinner = new Ora();
@@ -96,6 +108,11 @@ spinner.start();
       fs.writeFileSync(
         path.join('licenses', `${license.licenseId}.json`),
         JSON.stringify(currLicense, null, '\t')
+      );
+
+      fs.writeFileSync(
+        path.join('licenses', `${license.licenseId}.json.d.ts`),
+        licenseTypeTemplate
       );
 
       spinner.text = `Downloaded ${++counter} of ${
