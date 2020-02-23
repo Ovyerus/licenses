@@ -1,6 +1,6 @@
 {
   "name": "@ovyerus/licenses",
-  "version": "6.4.1",
+  "version": "6.4.4",
   "description": "List of SPDX licenses with predictable placeholders",
   "license": "CC0-1.0",
   "repository": "ovyerus/licenses",
@@ -16,8 +16,7 @@
   },
   "scripts": {
     "test": "eslint --fix . && ava",
-    "make": "node make.js",
-    "prepublishOnly": "yarn make"
+    "make": "node make.js"
   },
   "files": [
     "."

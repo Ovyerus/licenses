@@ -146,6 +146,7 @@ const spinner = new Ora().start();
   );
 
   await fs.copyFile("package.json", "dist/package.json");
+  await fs.copyFile("README.md", "dist/README.md");
 
   spinner.succeed("Done");
   console.log("To publish, cd into `dist/` and run your publish command");
