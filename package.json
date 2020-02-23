@@ -19,16 +19,7 @@
     "make": "node make.js"
   },
   "files": [
-    "index.js",
-    "full.js",
-    "simple.js",
-    "spdx.json",
-    "spdx-full.json",
-    "spdx-simple.json",
-    "licenses",
-    "index.d.ts",
-    "full.d.ts",
-    "simple.d.ts"
+    "dist"
   ],
   "keywords": [
     "spdx",
@@ -56,9 +47,7 @@
     "eslint-plugin-react": "7.18.3",
     "eslint-plugin-react-hooks": "2.4.0",
     "got": "^10.6.0",
-    "hard-rejection": "^2.0.0",
     "ora": "^4.0.3",
-    "p-map": "^3.0.0",
     "prettier": "1.19.1"
   }
 }

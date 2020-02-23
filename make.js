@@ -7,35 +7,6 @@ const path = require("path");
 
 const replacers = require("./replacers");
 
-// TODO: put this in proper files
-const typesTemplate = `declare namespace licenses {
-  export type Identifiers = {{}};
-
-  export interface LicenseInfo {
-    name: string;
-    url: string;
-    osiApproved: boolean;
-  }
-}
-
-declare const licenses: {
-  [key in licenses.Identifiers[number]]: licenses.LicenseInfo;
-};
-export = licenses;
-`;
-
-const licenseTypeTemplate = `interface License {
-  name: string;
-  url: string;
-  osiApproved: boolean;
-  licenseText: string;
-}
-
-declare const license: License;
-
-export default license;
-`;
-
 const replaceText = (replacer, text) => {
   let newText = text;
 
@@ -67,10 +38,10 @@ const URL = "https://spdx.org/licenses/licenses.json";
 const spinner = new Ora().start();
 
 (async () => {
-  spinner.text = "Clearing `./licenses/`";
+  spinner.text = "Clearing ./dist/";
 
-  await fs.rmdir("./licenses", { recursive: true });
-  await fs.mkdir("./licenses");
+  await fs.rmdir("./dist", { recursive: true });
+  await fs.mkdir("./dist/licenses", { recursive: true });
 
   spinner.text = "Fetching license list";
 
@@ -92,9 +63,9 @@ const spinner = new Ora().start();
     };
 
   await Promise.all([
-    fs.writeFile("spdx.json", JSON.stringify(licenses, null, "\t")),
+    fs.writeFile("dist/spdx.json", JSON.stringify(licenses, null, "\t")),
     fs.writeFile(
-      "spdx-simple.json",
+      "dist/spdx-simple.json",
       JSON.stringify(Object.keys(licenses), null, "\t")
     )
   ]);
@@ -106,7 +77,7 @@ const spinner = new Ora().start();
   // Download the data for each license.
   // Puts into batches as its faster than raw serial, however too many at
   // once gets you banned from spdx.org for a while.
-  /* eslint-disable no-loop-func, no-await-in-loop */
+  /* eslint-disable no-loop-func */
   for (const chnk of chunk(body.licenses, 20))
     await Promise.all(
       chnk.map(async l => {
@@ -138,13 +109,13 @@ const spinner = new Ora().start();
         );
 
       licenses[body.licenseId].licenseText = licenseText;
-      const fp = path.join("licenses", `${body.licenseId}.json`);
+      const fp = path.join("dist/licenses", `${body.licenseId}.json`);
 
       await fs.writeFile(
         fp,
         JSON.stringify(licenses[body.licenseId], null, "\t")
       );
-      await fs.writeFile(`${fp}.d.ts`, licenseTypeTemplate);
+      await fs.copyFile("templates/license.d.ts", `${fp}.d.ts`);
 
       spinner.text = `${++counter}/${licenseLen}`;
     })
@@ -152,10 +123,23 @@ const spinner = new Ora().start();
 
   spinner.text = "Writing final files";
 
-  await fs.writeFile("spdx-full.json", JSON.stringify(licenses, null, "\t"));
   await fs.writeFile(
-    "index.d.ts",
-    typesTemplate.replace(
+    "dist/spdx-full.json",
+    JSON.stringify(licenses, null, "\t")
+  );
+
+  for (const template of (await fs.readdir("templates")).filter(
+    f => !["index.d.ts", "license.d.ts"].includes(f)
+  ))
+    await fs.copyFile(
+      path.join("templates", template),
+      path.join("dist", template)
+    );
+
+  const indexTemplate = await fs.readFile("templates/index.d.ts", "utf-8");
+  await fs.writeFile(
+    "dist/index.d.ts",
+    indexTemplate.replace(
       "{{}}",
       JSON.stringify(Object.keys(licenses), null, "    ")
     )

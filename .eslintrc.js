@@ -1,10 +1,11 @@
 module.exports = {
-  extends: 'clarity',
+  extends: "clarity",
   parserOptions: {
-    sourceType: 'module'
+    sourceType: "module"
   },
   rules: {
-    'global-require': 'off',
-    'no-sync': 'off'
+    "global-require": "off",
+    "no-sync": "off",
+    "no-await-in-loop": "off"
   }
 };
