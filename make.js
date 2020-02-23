@@ -145,7 +145,10 @@ const spinner = new Ora().start();
     )
   );
 
+  await fs.copyFile("package.json", "dist/package.json");
+
   spinner.succeed("Done");
+  console.log("To publish, cd into `dist/` and run your publish command");
 })()
   .catch(err => {
     if (err.response)

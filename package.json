@@ -16,10 +16,11 @@
   },
   "scripts": {
     "test": "eslint --fix . && ava",
-    "make": "node make.js"
+    "make": "node make.js",
+    "prepublishOnly": "yarn make"
   },
   "files": [
-    "dist"
+    "."
   ],
   "keywords": [
     "spdx",
